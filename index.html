@@ -20,15 +20,14 @@
             <span>🍃</span> Quiero ayudar
         </button>
     </main>
+    
+<footer id="main-footer">
+    GreenTech Solutions &copy; <span id="year"></span> - Software Sostenible
+</footer>
 
-    <footer id="main-footer">
-        </footer>
-
-    <script>
-        const anioActual = new Date().getFullYear();
-        document.getElementById('main-footer').innerHTML = 
-            `GreenTech Solutions &copy; ${anioActual} - Software Sostenible`;
-    </script>
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
