@@ -69,7 +69,7 @@ h1 {
 
 .btn-eco:hover {
     background: linear-gradient(135deg, #218838 0%, #1e7e34 100%);
-    transform: translateY(-3px); /* Pequeño salto hacia arriba */
+    transform: translateY(-3px);
     box-shadow: 0 12px 20px rgba(40, 167, 69, 0.3);
 }
 
