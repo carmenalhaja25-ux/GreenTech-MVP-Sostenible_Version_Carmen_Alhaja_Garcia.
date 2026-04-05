@@ -1,6 +1,6 @@
 # GreenTech-MVP-Sostenible_Version_Carmen_Alhaja_Garcia.
 ¿Cómo he eliminado la "Grasa Digital" (Refactorización)?
-1. Hemos pasado de 83 líneas de código a 34.
+1. Hemos pasado de 83 líneas de código a 29.
 2. Todo el diseño se apoya en CSS nativo y hace que la web reduzca mucho su peso.
 
 Dentro del código HTML:
