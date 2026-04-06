@@ -1,17 +1,18 @@
 # GreenTech-MVP-Sostenible_Version_Carmen_Alhaja_Garcia.
-¿Cómo he eliminado la "Grasa Digital" (Refactorización)?
-1. Hemos pasado de 83 líneas de código a 28.
-2. Todo el diseño se apoya en CSS nativo y hace que la web reduzca mucho su peso.
+Este es mi codigo refactorizado.
+El codigo anterior que teniamos que refactorizar era un codigo pesado, dificil de leer e incoherente, que icluye tanto html como css y Java Script. Lo que he echo, principalmente, ha sido reducir el peso de este codigo.
 
-Dentro del código HTML:
-- He eliminado totalmente la dependencia del código de Bootstrap 5.3.0, que carga miles de líneas de CSS, que no sirven o no se usan en una página tan simple como esta. Al sustituirlo por CSS nativo, estamos ahorrando mucha energía, tiempo de carga y reducimos el peso de de la página de cientos de KB a solo unos pocos.
-- He eliminado totalmente las tipografias externas al dispostivo (como Google Fonts o Font Awesome). He sustituido el icono de la hoja que es una fuente externa que requiere peticiones HTTP adicionales que ralentizan el enderizado, por un emoji de hoja, que es texto nativo y no pesa nada.
+1. Lo primero que he cambiado y se ha notado en su peso, es cambiar el html con css interno, separandolos en dos archivos distintos que van enlazados. He pasado de tener un codigo de 83 líneas a 28 líneas.
 
-Dentro del CSS:
-- He ajustado los parametros de la URL de Unsplash para reducir el tamaño de la imagen, que antes estaba en 3000px, que es excesivo para la mayoria de pantallas y lo he ajustado a 1200px.
-  antes = (&w=3000&auto)
-  ahora = (&w=1200&q=75)
-- He cambiado la frase para dar a entender que el codigo es sostenible, al igual que el footer.
-- He definido un bloque :root en el css para definir los colores principlaes. Esto mejora la mantenibilidad y la escalabilidad y si quieres cambiar un tono, lo cambias ahi y se cambia en todo el documento.
-- He implementado el uso de clamp() para reducir las lineas de codigo al definir el tamaño rem que se debe usar en distintos dispositivos. Como tendriamos que escribir 3 o 4 reglas distintas, en lugar de escribir 10 o mas lineas, lo podemos hacer en una.
-  clamp(mínimo, preferido, máximo)
+2. Tambien, dentro del html, he modificado algunas adiciones eran innecesarias y que consumen mucha energia, como el uso de Bootstrap, que carga muchisimas lineas de CSS que muchas veces en codigos tan sencillos como este no se utilizan. Haciendo el CSS externo ajustandose a lo que necesita la pagina se ahorra mucho espacio.
+
+3. También, en el codigo original, se usan tipografias externas del dispositivo como las de Google y las he modificado por tipografias nativas. Por ejemplo, he sustituido el icono de la hoja, que esta dentro del boton, que es una fuente externa y la he cambiado por un emoticono y no hace que se tengan que hacer peticiones adicionales que relentizan el codigo, cuando podemos usar emoticono.
+
+También, he cambiado varias cosas en el CSS y he implementado algunas practicas sostenibles:
+En primer lugar, he cambiado el tamaño de la imagen principal de la pagina que anteriormente estaba en 3000px y la he cambiado a 1200px, que se ajustan perfectamente al tamaño de la pagina, sin necesidad de que la imagen se salga de los margenes, no encajen y de un visto feo a la pagina.
+
+También, he añadido un bloque :root en el que he definido los colores principales de la pagina y en lugar de ponerlo repetidas veces y tener que modificar uno x uno cuando quieras cambiar un color, lo modificas en el :root y se cambia en esos varios lugares que tu quieras a la vez.
+
+Por ultimo, he usado clamp() en el css que tambien es una buena practica (para reducir lineas de codigo), cuando queremos definir el tamaño rem que se debe usar en distintos dispositivos. Por ejemplo si queremos hacer que la pagina sea visible tanto como para portatiles, moviles o tables, sin usar clamp nos puede ocupar 10 lineas de codigo definir todo eso mientras que usandolo lo podemos hacer en una. Usando clamp, dentro del parentesis ponemos primero un valor minimo, en el medio el valor preferido y luego el valor maximo que queramos usar.
+
+Todas estas practicas hacen que el HTML sea mas facil de leer, aparte de mas sostenible y que el CSS sea reutilizable.
